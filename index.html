@@ -1,0 +1,123 @@
+<html>
+<head>
+  <title>Bulk Pinner</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Facebook information -->
+  <meta property="og:title" content="Bulk Pinner">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
+  <meta property="og:description" content="An application that allows you to pin multiple images to your Pinterest boards at once">
+
+  <meta name="author" content="Luke Denton">
+  <meta name="description" content="An application that allows you to pin multiple images to your Pinterest boards at once">
+  <meta name="keywords" content="Pinterest, bulk, mass, pin, image, upload, create, bulk upload">
+
+  <!-- Twitter information -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bulk Pinner">
+  <meta name="twitter:description" content="An application that allows you to pin multiple images to your Pinterest boards at once">
+
+  <link rel="preload" href="css/styles.css" as="style">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="preload" href="//allyoucan.cloud/cdn/icofont/1.0.0beta/css/icofont.css" crossorigin="anonymous" as="style">
+  <link rel="preload" href="//code.jquery.com/jquery-3.2.1.min.js" as="script"/>
+  <link rel="preload" href="//assets.pinterest.com/sdk/sdk.js" as="script"/>
+  <link rel="preload" href="js/scripts.js" as="script"/>
+  <link rel="preload" href="img/loader.svg" as="image"/>
+  <link href="https://fonts.googleapis.com/css?family=Istok+Web|Lora" rel="stylesheet">
+</head>
+<body>
+<header class="page-header large">
+  <h1 class="application-name">Bulk Pinner</h1>
+  <div class="description">An application that allows you to pin multiple images to your Pinterest boards at once</div>
+
+  <div class="authentication-container hidden">
+    <button class="authenticate-button">Authorize</button>
+  </div>
+  <div class="image-select-container hidden">
+    <div class="file-upload">
+      <input type="file" name="fileToUpload" id="fileToUpload" multiple hidden>
+      <label for="fileToUpload" class="select-files-label"><i class="icofont icofont-upload-alt"></i> <span class="label-text">Choose Images</span></label>
+    </div>
+  </div>
+</header>
+<section class="application-container">
+  <div class="get-started">
+    Get started by selecting some images to pin
+  </div>
+  <div class="preview-pins-container hidden">
+    <div class="action-toolbar">
+      <button class="refresh-boards" data-balloon="Load latest list of boards from Pinterest" data-balloon-pos="top">
+        <i class="icofont icofont-refresh"></i> Refresh Boards
+      </button>
+      <div class="send-all-to-board">
+        <label for="send-all-to-board">Send all images to board</label>
+        <div class="select-container">
+          <select name="send-all-to-board" id="send-all-to-board" class="board-names">
+            <option value="">Loading boards...</option>
+          </select>
+        </div>
+      </div>
+      <button class="send-to-pinterest">
+        <i class="icofont icofont-tack-pin"></i> Pin
+      </button>
+    </div>
+    <div class="pins-container">
+
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="version">
+    Version 1.0
+  </div>
+  <div class="contact">
+    Suggestions or issues? <a href="mailto:bulkpinner@gmail.com">Click here to email me</a> or open a <a href="#">GitHub Issue</a>
+  </div>
+  <div class="author">
+    Created by Luke Denton
+  </div>
+</footer>
+
+<template id="preview-template">
+  <div class="preview-container">
+    <div class="preview-image-container">
+      <img src="" alt="" class="preview-image">
+    </div>
+    <div class="information-container">
+      <div class="board-selection">
+        <div class="select-container">
+          <select name="board-names" class="preview-pin-board-select board-names">
+            <option value="">Loading boards...</option>
+          </select>
+        </div>
+      </div>
+      <div class="note-container" data-tooltip="Pro Tip: Press TAB to move between just invalid fields" data-balloon-pos="up" data-balloon-visible>
+        <textarea name="note" id="note" rows="5" class="note" placeholder="Note for pin (required)"></textarea>
+      </div>
+      <div class="link-container">
+        <input type="text" class="link" placeholder="Link for pin (optional)">
+      </div>
+    </div>
+    <div class="image-uploading-container">
+      <div class="loading-animation">
+        <i class="icofont icofont-spinner-alt-6"></i>
+      </div>
+    </div>
+    <div class="uploaded-icon">
+      <i class="icofont icofont-tick-mark"></i>
+    </div>
+  </div>
+</template>
+
+<link rel="stylesheet" href="//allyoucan.cloud/cdn/icofont/1.0.0beta/css/icofont.css" crossorigin="anonymous">
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="//assets.pinterest.com/sdk/sdk.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
