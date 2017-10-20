@@ -1,4 +1,8 @@
-0.1 Beta release
+0.1.1 Added error tracking
+
+Included Bugsnag, which will hopefully keep me informed of any errors, and also updated Google Analytics tracking code
+
+0.1.0 Beta release
 
 The initial version of the application. Allows people to select images from their device, add a note and then select which Pinterest board they should be sent to.
 
