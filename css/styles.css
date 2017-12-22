@@ -171,6 +171,25 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /**
+ * Utility mixins that don't warrant a file to themselves
+ */
+/* Bulk Pinner - Create multiple pins in your Pinterest boards at once
+ * Copyright (C) 2017 Luke Denton
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+/**
  * Button mixin
  *
  * @param string $size The size of the button. Options are 'large' or 'small'. Default is 'large'
@@ -987,7 +1006,8 @@ footer {
               animation: rotate40 1s infinite step-end;
       font-size: 50px;
       color: #BD081C; }
-  .preview-container .uploaded-icon {
+  .preview-container .uploaded-icon,
+  .preview-container .error-icon {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -998,15 +1018,18 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     font-size: 0;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    color: #008000;
     transition: font-size 100ms linear;
     width: 30px;
-    height: 30px; }
+    height: 30px;
+    position: absolute;
+    top: -10px;
+    right: -10px; }
   .preview-container[data-pinned] .uploaded-icon {
-    font-size: 30px; }
+    font-size: 30px;
+    color: #2ECC40; }
+  .preview-container[data-pin-error] .error-icon {
+    font-size: 30px;
+    color: #FF851B; }
 
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
