@@ -865,6 +865,16 @@ footer {
           flex: 0 0 auto;
   padding: 0 30px;
   background-color: #DDDDDD; }
+  footer .links-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 220px;
+            flex: 0 0 220px; }
 
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
@@ -1030,6 +1040,47 @@ footer {
   .preview-container[data-pin-error] .error-icon {
     font-size: 30px;
     color: #FF851B; }
+
+.modal-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); }
+  .modal-overlay .privacy-policy-modal {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    max-width: 60%;
+    background-color: #FFFFFF;
+    top: 5%;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075); }
+  .modal-overlay .modal-header {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #BD081C;
+    color: #FFFFFF;
+    padding: 20px 60px; }
+  .modal-overlay .modal-close {
+    position: absolute;
+    right: 20px;
+    top: 24px; }
+    .modal-overlay .modal-close .close {
+      font-size: 25px;
+      color: #FFFFFF; }
+  .modal-overlay .modal-content {
+    padding: 20px 60px 60px; }
+    .modal-overlay .modal-content p {
+      line-height: 1.5em; }
+      .modal-overlay .modal-content p + p {
+        margin-top: 15px; }
 
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
