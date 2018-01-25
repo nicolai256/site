@@ -668,6 +668,65 @@ a:not(.no-style):hover {
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+/**
+ * Table element styling
+ */
+table {
+  position: relative;
+  border-collapse: collapse;
+  white-space: nowrap;
+  font-size: 13px;
+  background-color: rgb(#FFFFFF); }
+  table thead {
+    padding-bottom: 3px; }
+    table thead .mdl-data-table__select {
+      margin-top: 0; }
+  table tbody tr {
+    position: relative;
+    height: 48px;
+    transition-duration: 0.28s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color; }
+    table tbody tr.is-selected {
+      background-color: #e0e0e0; }
+    table tbody tr:hover {
+      background-color: #eeeeee; }
+  table td, table th {
+    text-align: left;
+    height: 48px;
+    vertical-align: middle;
+    padding: 0 20px; }
+  table td {
+    position: relative;
+    vertical-align: middle;
+    height: 48px;
+    box-sizing: border-box; }
+    table td .mdl-data-table__select {
+      vertical-align: middle; }
+  table th {
+    position: relative;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.54);
+    box-sizing: border-box;
+    text-align: center; }
+
+/* Bulk Pinner - Create multiple pins in your Pinterest boards at once
+ * Copyright (C) 2017 Luke Denton
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 .action-button {
   border: 0;
   display: inline-block;
@@ -907,7 +966,7 @@ footer {
   background-color: #BD081C;
   color: #FFFFFF;
   max-height: 10vh;
-  height: 100%;
+  height: 100vh;
   padding: 0 30px;
   text-align: center;
   transition: max-height 300ms linear, -webkit-box-pack 300ms linear;
@@ -940,6 +999,115 @@ footer {
     text-align: center; }
   .page-header .description {
     display: none; }
+
+/* Bulk Pinner - Create multiple pins in your Pinterest boards at once
+ * Copyright (C) 2017 Luke Denton
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.modal-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5); }
+  .modal-overlay .modal {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    max-width: 60%;
+    background-color: #FFFFFF;
+    top: 5%;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075); }
+  .modal-overlay .modal-header {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #BD081C;
+    color: #FFFFFF;
+    padding: 20px 60px; }
+  .modal-overlay .modal-close {
+    position: absolute;
+    right: 20px;
+    top: 24px; }
+    .modal-overlay .modal-close .close {
+      font-size: 25px;
+      color: #FFFFFF; }
+  .modal-overlay .modal-content {
+    padding: 20px 60px; }
+    .modal-overlay .modal-content p {
+      line-height: 1.5em; }
+      .modal-overlay .modal-content p + p {
+        margin-top: 15px; }
+
+.preview-actions-container {
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+  .preview-actions-container .preview-action-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+    color: #BBBBBB;
+    outline: none;
+    cursor: pointer; }
+    .preview-actions-container .preview-action-btn i {
+      pointer-events: none; }
+  .preview-actions-container .preview-actions {
+    position: absolute;
+    right: 0;
+    top: 25px;
+    background-color: #FFFFFF;
+    list-style: none;
+    height: auto;
+    width: auto;
+    min-width: 124px;
+    padding: 8px 0;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+    .preview-actions-container .preview-actions.is-visible {
+      transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 1; }
+  .preview-actions-container .preview-action {
+    display: block;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    margin: 0;
+    padding: 0 16px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    height: 48px;
+    line-height: 48px;
+    white-space: nowrap;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+    .preview-actions-container .preview-action:hover {
+      background-color: #F2F2F2; }
 
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
@@ -1041,47 +1209,6 @@ footer {
     font-size: 30px;
     color: #FF851B; }
 
-.modal-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5); }
-  .modal-overlay .privacy-policy-modal {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-    max-width: 60%;
-    background-color: #FFFFFF;
-    top: 5%;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075); }
-  .modal-overlay .modal-header {
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    background-color: #BD081C;
-    color: #FFFFFF;
-    padding: 20px 60px; }
-  .modal-overlay .modal-close {
-    position: absolute;
-    right: 20px;
-    top: 24px; }
-    .modal-overlay .modal-close .close {
-      font-size: 25px;
-      color: #FFFFFF; }
-  .modal-overlay .modal-content {
-    padding: 20px 60px 60px; }
-    .modal-overlay .modal-content p {
-      line-height: 1.5em; }
-      .modal-overlay .modal-content p + p {
-        margin-top: 15px; }
-
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
  *
@@ -1115,5 +1242,24 @@ footer {
     padding: 5px 10px 5px 5px; }
   .select-container select::-ms-expand {
     display: none; }
+
+/**
+ * These styles will be removed once the application is approved by Pinterest, and the note about it on the
+ * homepage is removed
+ */
+.page-header .footnote {
+  display: none; }
+
+.page-header.large .footnote {
+  display: block;
+  font-size: 0.7em;
+  padding-top: 70px;
+  max-width: 50%;
+  margin: 0 auto;
+  line-height: 1.2em;
+  letter-spacing: 1px; }
+  .page-header.large .footnote a {
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF; }
 
 /*# sourceMappingURL=styles.css.map */
