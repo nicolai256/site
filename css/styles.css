@@ -936,9 +936,9 @@ table {
     color: #BBBBBB; }
   .application-container .preview-pins-container.toolbar-is-sticky {
     padding-top: 86px; }
-  .application-container .preview-pins-container .preview-piins-footer {
+  .application-container .preview-pins-container .preview-pins-footer {
     text-align: center; }
-    .application-container .preview-pins-container .preview-piins-footer ins {
+    .application-container .preview-pins-container .preview-pins-footer ins {
       margin-top: 50px; }
   .application-container .pins-container {
     display: -webkit-box;
