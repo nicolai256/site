@@ -936,6 +936,10 @@ table {
     color: #BBBBBB; }
   .application-container .preview-pins-container.toolbar-is-sticky {
     padding-top: 86px; }
+  .application-container .preview-pins-container .preview-piins-footer {
+    text-align: center; }
+    .application-container .preview-pins-container .preview-piins-footer ins {
+      margin-top: 50px; }
   .application-container .pins-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1370,30 +1374,5 @@ footer {
     padding: 5px 10px 5px 5px; }
   .select-container select::-ms-expand {
     display: none; }
-
-/**
- * These styles will be removed once the application is approved by Pinterest, and the note about it on the
- * homepage is removed
- */
-.page-header .footnote {
-  display: none; }
-
-.page-header.large .footnote {
-  display: block;
-  font-size: 0.7em;
-  padding-top: 20px;
-  max-width: 100%;
-  margin: 0 auto;
-  line-height: 1.2em;
-  letter-spacing: 1px; }
-  @media (min-width: 1080px) {
-    .page-header.large .footnote {
-      max-width: 50%; } }
-  @media (min-width: 450px) {
-    .page-header.large .footnote {
-      padding-top: 70px; } }
-  .page-header.large .footnote a {
-    color: #FFFFFF;
-    border-bottom: 1px solid #FFFFFF; }
 
 /*# sourceMappingURL=styles.css.map */
