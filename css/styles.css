@@ -575,6 +575,8 @@ body {
     @media (min-width: 1080px) {
       body .github-fork-link {
         display: block; } }
+  body.no-scroll {
+    overflow: hidden; }
 
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
@@ -1153,6 +1155,9 @@ footer {
   right: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.5); }
+  .modal-overlay.ie-overlay {
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 99; }
   .modal-overlay .modal {
     position: absolute;
     left: 50%;
