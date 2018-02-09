@@ -1256,6 +1256,8 @@ footer {
     .modal-overlay .modal-close .close {
       font-size: 25px;
       color: #FFFFFF; }
+      .modal-overlay .modal-close .close .icofont {
+        pointer-events: none; }
   .modal-overlay .modal-content {
     padding: 20px 60px; }
     .modal-overlay .modal-content p {
