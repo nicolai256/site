@@ -570,11 +570,6 @@ body {
   min-height: 100vh;
   background: #F2F2F2;
   color: #222222; }
-  body .github-fork-link {
-    display: none; }
-    @media (min-width: 1080px) {
-      body .github-fork-link {
-        display: block; } }
   body.no-scroll {
     overflow: hidden; }
 
@@ -938,10 +933,6 @@ table {
     color: #BBBBBB; }
   .application-container .preview-pins-container.toolbar-is-sticky {
     padding-top: 86px; }
-  .application-container .preview-pins-container .preview-pins-footer {
-    text-align: center; }
-    .application-container .preview-pins-container .preview-pins-footer ins {
-      margin-top: 50px; }
   .application-container .pins-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1083,6 +1074,7 @@ footer {
  * Page header component styling
  */
 .page-header {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1103,6 +1095,16 @@ footer {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto; }
+  .page-header .github-fork-link {
+    position: absolute;
+    top: -200%;
+    left: 0;
+    display: none;
+    z-index: 990;
+    transition: top 300ms linear; }
+    @media (min-width: 1080px) {
+      .page-header .github-fork-link {
+        display: block; } }
   .page-header.large {
     max-height: 60vh;
     -webkit-box-pack: center;
@@ -1115,6 +1117,9 @@ footer {
     transition: max-height 300ms linear, -webkit-box-pack 300ms linear;
     transition: max-height 300ms linear, justify-content 300ms linear;
     transition: max-height 300ms linear, justify-content 300ms linear, -webkit-box-pack 300ms linear, -ms-flex-pack 300ms linear; }
+    .page-header.large .github-fork-link {
+      top: 0;
+      transition: top 300ms ease-out; }
     .page-header.large .application-name {
       margin-bottom: 20px; }
     .page-header.large .authentication-container,
@@ -1126,11 +1131,76 @@ footer {
           padding-top: 100px; } }
     .page-header.large .description {
       display: block; }
+    .page-header.large .user-actions-container {
+      top: 15px;
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
+  .page-header .user-actions-container {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 15px; }
+    .page-header .user-actions-container .user-action-menu-toggle {
+      border: 0;
+      display: inline-block;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+      text-align: center;
+      font-family: "Istok Web", sans-serif;
+      padding: 5px 10px;
+      font-size: 15px;
+      background-color: #FFFFFF;
+      color: #BD081C; }
+    .page-header .user-actions-container .user-action__disconnect {
+      border: 0;
+      display: inline-block;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+      text-align: center;
+      font-family: "Istok Web", sans-serif;
+      padding: 5px 10px;
+      font-size: 15px;
+      background-color: #FFFFFF;
+      color: #BD081C;
+      position: absolute;
+      top: 29px;
+      right: 0;
+      opacity: 0;
+      transition: opacity 200ms ease, -webkit-transform 0ms linear 200ms;
+      transition: opacity 200ms ease, transform 0ms linear 200ms;
+      transition: opacity 200ms ease, transform 0ms linear 200ms, -webkit-transform 0ms linear 200ms;
+      z-index: 998;
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px); }
+      .page-header .user-actions-container .user-action__disconnect:hover {
+        background-color: #BD081C;
+        color: #FFFFFF; }
+    .page-header .user-actions-container.show-menu .user-action__disconnect {
+      opacity: 1;
+      transition: all 200ms ease;
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
   .page-header .authentication-container,
   .page-header .image-select-container {
     text-align: center; }
   .page-header .description {
     display: none; }
+
+/**
+ * Styling for keyboard keys - as shown in keyboard shortcut modal
+ */
+.keyboard-key {
+  background: #f3f3f3;
+  border-radius: 3px;
+  color: #212121;
+  display: inline-block;
+  font-weight: bold;
+  min-width: .7em;
+  padding: 2px 4px;
+  text-align: center; }
 
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
@@ -1149,12 +1219,13 @@ footer {
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 .modal-overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5); }
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 999; }
   .modal-overlay.ie-overlay {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 99; }
@@ -1264,10 +1335,20 @@ footer {
  * Pin preview component styling
  */
 .preview-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   padding: 5px;
   margin-top: 30px;
   max-width: 300px; }
   .preview-container .preview-inner-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     position: relative;
     background: #FFFFFF;
     padding: 10px; }
@@ -1291,11 +1372,18 @@ footer {
   .preview-container .board-selection {
     padding: 5px 0 0; }
   .preview-container .note-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding: 5px 0; }
     .preview-container .note-container .note.invalid {
       border: 1px solid #BD081C; }
       .preview-container .note-container .note.invalid:focus, .preview-container .note-container .note.invalid:active {
         outline-color: #BD081C; }
+  .preview-container .link-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
   .preview-container .image-uploading-container {
     display: none; }
   .preview-container.sending .image-uploading-container {
