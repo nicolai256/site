@@ -692,9 +692,9 @@ a:not(.no-style):hover {
 table {
   position: relative;
   border-collapse: collapse;
-  white-space: nowrap;
   font-size: 13px;
-  background-color: rgb(#FFFFFF); }
+  background-color: rgb(#FFFFFF);
+  max-width: 100%; }
   table thead {
     padding-bottom: 3px; }
     table thead .mdl-data-table__select {
@@ -727,7 +727,8 @@ table {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.54);
     box-sizing: border-box;
-    text-align: center; }
+    text-align: center;
+    white-space: nowrap; }
 
 /* Bulk Pinner - Create multiple pins in your Pinterest boards at once
  * Copyright (C) 2017 Luke Denton
@@ -1225,7 +1226,8 @@ footer {
   right: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.5);
-  z-index: 999; }
+  z-index: 999;
+  overflow-y: auto; }
   .modal-overlay.ie-overlay {
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 99; }
@@ -1234,10 +1236,15 @@ footer {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    max-width: 60%;
+    max-width: 90%;
     background-color: #FFFFFF;
     top: 5%;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075); }
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.075);
+    width: 100%;
+    margin-bottom: 50px; }
+    @media (min-width: 800px) {
+      .modal-overlay .modal {
+        max-width: 60%; } }
   .modal-overlay .modal-header {
     position: relative;
     display: -webkit-box;
@@ -1259,7 +1266,10 @@ footer {
       .modal-overlay .modal-close .close .icofont {
         pointer-events: none; }
   .modal-overlay .modal-content {
-    padding: 20px 60px; }
+    padding: 20px 30px; }
+    @media (min-width: 650px) {
+      .modal-overlay .modal-content {
+        padding: 20px 60px; } }
     .modal-overlay .modal-content p {
       line-height: 1.5em; }
       .modal-overlay .modal-content p + p {
