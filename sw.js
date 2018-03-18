@@ -16,15 +16,15 @@
  */
 
 const appCacheNames = [
-    'bulk-pinner--short-term--002',
-    'bulk-pinner--long-term--002'
+    'bulk-pinner--short-term--003',
+    'bulk-pinner--long-term--003'
 ];
 
 const appCache = [
     {
         name: appCacheNames[0],
         files: [
-            '/',
+            '/site/',
             'index.html',
             'css/styles.944492e3544f0cec0c1636446f2297d3.css',
             'js/scripts.86d70eb3e0da2d186e23.js'
@@ -47,8 +47,7 @@ const appCache = [
             'https://fonts.googleapis.com/css?family=Istok+Web|Lora',
             'https://fonts.gstatic.com/s/lora/v12/0QIvMX1D_JOuMwr7Iw.woff2',
             'https://fonts.gstatic.com/s/istokweb/v11/3qTvojGmgSyUukBzKslpBmt_.woff2',
-            'https://assets.pinterest.com/sdk/sdk.js',
-            'http://assets.pinterest.com/sdk/sdk.js'
+            'https://assets.pinterest.com/sdk/sdk.js'
         ]
     }
 ];
