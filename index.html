@@ -43,12 +43,11 @@
   <meta name="pinterest" content="nopin" />
   <meta itemprop="logo" content="img/logo.png">
 
-  <link rel="stylesheet" href="css/styles.8a457548d2c9cc9f2e7cb5a89eb14a6c.css">
+  <link rel="stylesheet" href="css/styles.7d9abc56c39e44fa1aadeda5ef59cdcf.css">
 
   <link rel="preload" href="//assets.pinterest.com/sdk/sdk.js" as="script"/>
-  <link rel="preload" href="js/scripts.533e14516454e5aeb2d3.js" as="script"/>
+  <link rel="preload" href="js/scripts.6d5f15ee95b420a0d7ba.js" as="script"/>
   <link rel="preload" href="img/loader.svg" as="image"/>
-  <link href="https://fonts.googleapis.com/css?family=Istok+Web|Lora" rel="stylesheet">
 
   <script src="vendor/error-capture.js" async></script>
 
@@ -127,23 +126,25 @@
 
     </div>
 
-    <div class="preview-pins-footer">
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- Bulk Pinner -->
-      <ins class="adsbygoogle"
-           style="display:inline-block;width:728px;height:90px;max-width: 100%;"
-           data-ad-client="ca-pub-8235545116983936"
-           data-ad-slot="8169229710"></ins>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </div>
+    <template id="adsense-template">
+      <div class="preview-pins-footer">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Bulk Pinner -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px;max-width: 100%;"
+             data-ad-client="ca-pub-8235545116983936"
+             data-ad-slot="8169229710"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </template>
   </div>
 </section>
 <footer>
   <div class="links-container">
     <div class="version" itemprop="softwareVersion">
-      <a href="https://github.com/bulkpinner/bulkpinner/blob/master/CHANGELOG.md" target="_blank">Version 1.1.1</a>
+      <a href="https://github.com/bulkpinner/bulkpinner/blob/master/CHANGELOG.md" target="_blank">Version 1.1.2</a>
     </div>
     <div class="privacy-policy-link-container">
       <a href="#" class="privacy-policy-link">Privacy Policy</a>
@@ -301,7 +302,7 @@
 </template>
 
 <script src="//assets.pinterest.com/sdk/sdk.js"></script>
-<script src="js/scripts.533e14516454e5aeb2d3.js"></script>
+<script src="js/scripts.6d5f15ee95b420a0d7ba.js"></script>
 
 <script>
     if ('serviceWorker' in navigator) {

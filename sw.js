@@ -17,7 +17,7 @@
 
 const appCacheNames = [
     'bulk-pinner--short-term--005',
-    'bulk-pinner--long-term--003'
+    'bulk-pinner--long-term--004'
 ];
 
 const appCache = [
@@ -26,8 +26,8 @@ const appCache = [
         files: [
             '/site/',
             'index.html',
-            'css/styles.8a457548d2c9cc9f2e7cb5a89eb14a6c.css',
-            'js/scripts.533e14516454e5aeb2d3.js'
+            'css/styles.7d9abc56c39e44fa1aadeda5ef59cdcf.css',
+            'js/scripts.6d5f15ee95b420a0d7ba.js'
         ]
     },
     {
@@ -39,12 +39,6 @@ const appCache = [
             'img/favicons/favicon-32x32.png',
             'img/favicons/favicon-16x16.png',
             'vendor/error-capture.js',
-            'vendor/icofont/css/icofont.css',
-            'vendor/icofont/fonts/icofont.eot',
-            'vendor/icofont/fonts/icofont.svg',
-            'vendor/icofont/fonts/icofont.ttf',
-            'vendor/icofont/fonts/icofont.woff',
-            'https://fonts.googleapis.com/css?family=Istok+Web|Lora',
             'https://fonts.gstatic.com/s/lora/v12/0QIvMX1D_JOuMwr7Iw.woff2',
             'https://fonts.gstatic.com/s/istokweb/v11/3qTvojGmgSyUukBzKslpBmt_.woff2',
             'https://assets.pinterest.com/sdk/sdk.js'
