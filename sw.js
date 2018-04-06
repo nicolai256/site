@@ -16,7 +16,7 @@
  */
 
 const appCacheNames = [
-    'bulk-pinner--short-term--007',
+    'bulk-pinner--short-term--008',
     'bulk-pinner--long-term--004'
 ];
 
@@ -27,7 +27,7 @@ const appCache = [
             '/site/',
             'index.html',
             'css/styles.7d9abc56c39e44fa1aadeda5ef59cdcf.css',
-            'js/scripts.6d5f15ee95b420a0d7ba.js'
+            'js/scripts.85ba21490c4c0c87fde9.js'
         ]
     },
     {
@@ -46,14 +46,13 @@ const appCache = [
     }
 ];
 
-self.addEventListener('install', e =>{
-    // console.log('[ServiceWorker] Install');
+self.addEventListener('install', e => {
+    self.skipWaiting();
 
     e.waitUntil(
         Promise.all(
             appCache.map((appCache) => {
                 caches.open(appCache.name).then(cache => {
-                    // console.log('[ServiceWorker] Caching app shell');
                     return cache.addAll(appCache.files);
                 })
             })
@@ -62,13 +61,10 @@ self.addEventListener('install', e =>{
 });
 
 self.addEventListener('activate', e => {
-    // console.log('[ServiceWorker] Activate');
-
     e.waitUntil(
         caches.keys().then(keyList => {
             return Promise.all(keyList.map(key => {
                 if (!appCacheNames.includes(key)) {
-                    // console.log('[ServiceWorker] Remove old cache', key);
                     return caches.delete(key);
                 }
             }));
@@ -79,7 +75,8 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-    // console.log('[ServiceWorker] Fetch', e.request.url);
+    if (e.request.method != 'GET') return;
+
     e.respondWith(
         caches.match(e.request).then(response => {
             return response || fetch(e.request).catch(() => {
