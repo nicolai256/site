@@ -27,7 +27,7 @@ const appCache = [
             '/site/',
             'index.html',
             'css/styles.fb802a49bbe32c00fbab196818bcd8a3.css',
-            'js/scripts.43461e4220ad9cdccc7c.js'
+            'js/scripts.754892a32cae8e8c454a.js'
         ]
     },
     {
