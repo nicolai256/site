@@ -16,7 +16,7 @@
  */
 
 const appCacheNames = [
-    'bulk-pinner--short-term--013',
+    'bulk-pinner--short-term--014',
     'bulk-pinner--long-term--005'
 ];
 
@@ -26,8 +26,8 @@ const appCache = [
         files: [
             '/site/',
             'index.html',
-            'css/styles.fb802a49bbe32c00fbab196818bcd8a3.css',
-            'js/scripts.754892a32cae8e8c454a.js'
+            'css/styles.cbfbe99b9314097bc23c9f5758983701.css',
+            'js/scripts.3099f342ca9ab41b4508.js'
         ]
     },
     {
